@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Bhaveshsinh Khasiya's Portfolio - Showcasing my skills, projects, and experience as a developer." />
+    <link rel="icon" href="%PUBLIC_URL%/M_Logo.png" />
+    <title>Bhaveshsinh Khasiya - Portfolio</title>
+
+    <style>
+      /* Loader Styles */
+      #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      #loader img {
+        width: 100px;
+        animation: fadeIn 0.5s ease-in-out forwards;
+      }
+
+      .loading-text {
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 8px;
+        animation: textFade 1.2s infinite alternate;
+      }
+
+      .progress-container {
+        width: 120px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        margin-top: 8px;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        width: 0%;
+        height: 100%;
+        background: #fed700;
+        border-radius: 5px;
+        transition: width 0.2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes textFade {
+        0% {
+          opacity: 0.3;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Loader -->
+    <div id="loader">
+      <img src="%PUBLIC_URL%/M_Logo.png" alt="Loading..." />
+      <div class="loading-text" id="loadingText">Loading...</div>
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <!-- React Root -->
+    <div id="root"></div>
+
+    <script>
+      const loader = document.getElementById("loader");
+      const progressBar = document.getElementById("progressBar");
+
+      function hideLoader() {
+        loader.style.opacity = "0";
+        setTimeout(() => {
+          loader.remove();
+        }, 300);
+      }
+
+      window.addEventListener("load", function () {
+        progressBar.style.width = "100%";
+        hideLoader();
+      });
+    </script>
+  </body>
+</html>
