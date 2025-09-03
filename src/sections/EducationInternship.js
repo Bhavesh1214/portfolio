@@ -100,7 +100,7 @@ function EducationInternship() {
                 <div className="timeline">
                   {[
                     { title: "UI/UX", org: "", date: "JAN-2025 - Present" },
-                    { title: "Frontend Devlopre", org: "CodeQuality Technologies", date: "SEP-2022 - DEC-2024" },
+                    { title: "Frontend Developer", org: "CodeQuality Technologies", date: "SEP-2022 - DEC-2024" },
                   ].map((intern, index) => (
                     <motion.div
                       key={index}
